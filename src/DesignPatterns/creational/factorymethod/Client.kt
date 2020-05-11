@@ -38,7 +38,7 @@ fun main() {
 
     // Iteration1
     println("--------Iteration1--------")
-    val productionList: List<Production>
+    val productionList
             = listOf(redProduction, blueProduction, defaultProduction)
 
     val numbersIterator = productionList.iterator()
