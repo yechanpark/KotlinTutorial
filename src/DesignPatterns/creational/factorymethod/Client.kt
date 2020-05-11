@@ -7,20 +7,21 @@ import DesignPatterns.creational.factorymethod.production.RedProduction
 
 // Entry Point
 fun main() {
-    // val : 불변
+    // val : 불변 - 할당된 객체 또는 변수값 자체를 변경하는 것은 불가능
+    //              Compile Error : Val cannot be reassigned
+    //              redProduction = ProductionFactory.create(ProductionType.RED)
+    // ProductionFactory.Companion.create()의 축약형
     val redProduction: Production = ProductionFactory.create(ProductionType.RED)
-    // 할당된 객체 또는 변수값 자체를 변경하는 것은 불가능
-    // Compile Error : Val cannot be reassigned
-    // redProduction = ProductionFactory.create(ProductionType.RED)
     println(redProduction)
 
     // is : 타입 체크
     if (redProduction is RedProduction) {
         println("redProduction is " + redProduction.javaClass.simpleName)
-        // 할당된 객체 내의 프로퍼티는 수정 가능 (단, 프로퍼티는 var여야 함)
-        // as : 캐스팅
-        (redProduction as RedProduction).name = "Updated Red Production Name"
     }
+
+    // as : 캐스팅
+    // 할당된 val 객체 내의 프로퍼티는 수정 가능 (단, 프로퍼티는 var여야 함)
+    (redProduction as RedProduction).name = "Updated Red Production Name"
     println(redProduction)
 
     // 파라미터 이름을 지정하여 순서를 바꾸어 넣을 수 있음
