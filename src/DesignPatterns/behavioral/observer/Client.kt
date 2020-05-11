@@ -1,9 +1,6 @@
 package DesignPatterns.behavioral.observer
 
-import DesignPatterns.behavioral.observer.observer.ConcreteObserver1
-import DesignPatterns.behavioral.observer.observer.ConcreteObserver2
-import DesignPatterns.behavioral.observer.observer.ConcreteObserver3
-import DesignPatterns.behavioral.observer.observer.Observer
+import DesignPatterns.behavioral.observer.observer.*
 import DesignPatterns.behavioral.observer.subject.ConcreteSubject
 
 // Entry Point
@@ -16,6 +13,16 @@ fun main() {
     subject.attach(observer1)
     subject.attach(observer2)
     subject.attach(observer3)
+
+    // object expression : Anonymous Class - 클래스의 경우 open이어야 함
+    val observer4 = object: ConcreteObserver4(subject) {
+        override fun update() {
+            println("updated")
+        }
+
+    }
+
+    subject.attach(observer4)
     subject.addNumber(1)
 
     subject.detach(observer1)
