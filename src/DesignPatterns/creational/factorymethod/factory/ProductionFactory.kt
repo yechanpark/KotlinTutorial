@@ -15,7 +15,7 @@ class ProductionFactory {
         // 특정 파라미터(type)를 다른 파라미터(name)의 기본 값으로 사용 가능
         fun create(
             type: ProductionType = ProductionType.DEFAULT,
-            name: String = type.getDefaultProductionName()
+            name: String = type.productionName
         ): Production {
             // 1. if ... else
             // 2. switch

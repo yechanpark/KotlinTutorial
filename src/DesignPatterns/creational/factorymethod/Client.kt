@@ -8,10 +8,10 @@ import DesignPatterns.creational.factorymethod.production.RedProduction
 // Entry Point
 fun main() {
     // val : 불변 - 할당된 객체 또는 변수값 자체를 변경하는 것은 불가능
-    //              Compile Error : Val cannot be reassigned
-    //              redProduction = ProductionFactory.create(ProductionType.RED)
     // ProductionFactory.Companion.create()의 축약형
-    val redProduction: Production = ProductionFactory.create(ProductionType.RED)
+    val redProduction = ProductionFactory.create(ProductionType.RED)
+    // Compile Error : Val cannot be reassigned
+    // redProduction = ProductionFactory.create(ProductionType.BLUE)
     println(redProduction)
 
     // is : 타입 체크
