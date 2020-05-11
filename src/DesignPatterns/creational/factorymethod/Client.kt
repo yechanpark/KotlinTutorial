@@ -1,7 +1,6 @@
 package DesignPatterns.creational.factorymethod
 
 import DesignPatterns.creational.factorymethod.factory.ProductionFactory
-import DesignPatterns.creational.factorymethod.production.Production
 import DesignPatterns.creational.factorymethod.production.ProductionType
 import DesignPatterns.creational.factorymethod.production.RedProduction
 
