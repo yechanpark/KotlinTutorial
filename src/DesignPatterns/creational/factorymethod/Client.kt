@@ -36,13 +36,20 @@ fun main() {
     val defaultProduction = ProductionFactory.create()
     println(defaultProduction)
 
-    println("--------Iteration--------")
-    // Iteration
+    // Iteration1
+    println("--------Iteration1--------")
     val productionList: List<Production>
             = listOf(redProduction, blueProduction, defaultProduction)
+
     val numbersIterator = productionList.iterator()
     while (numbersIterator.hasNext()) {
         val production = numbersIterator.next()
+        production.consume()
+    }
+
+    // Iteration2
+    println("--------Iteration2--------")
+    for (production in productionList) {
         production.consume()
     }
 }
