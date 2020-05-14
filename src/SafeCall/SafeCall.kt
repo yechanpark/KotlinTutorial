@@ -21,6 +21,7 @@ fun main() {
     val d = D("D name")
     c.d = d
     println(safeCall(a))
+    println("----------------------------")
 
     c.d = null
     // KNPE1(a)
@@ -53,7 +54,7 @@ fun KNPE1(a: A?) {
 
 fun KNPE2(a: A?) {
     // ?: : Elvis연산자. 조건절이 null인 경우 ?: 뒤의 문장을 실행
-    println(null ?: "elvis operator with null")
+    println(a?.b?.c?.d?.name ?: "elvis operator with null")
 
     // KNPE 또는 그 외 Exception을 지정하여 발생시키는 경우
     println(a?.b?.c?.d?.name ?: throw KotlinNullPointerException("KNPE2"))
